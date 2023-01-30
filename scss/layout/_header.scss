@@ -1,0 +1,105 @@
+// HEADER START
+.header {
+  // position: relative;
+  // background-color: $white-color;
+  // position: fixed;
+  // padding: 2.2rem 0 2.1rem;
+  // z-index: 100;
+  // width: 100%;
+  // margin-bottom: 100px;
+  // position: sticky;
+  // position: fixed;
+
+  // z-index: 1000;
+  // top: 0;
+  padding: 5rem 0 2rem;
+  width: 100%;
+  background-color: transparent;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  // z-index: 100;
+
+  .site-logo {
+    margin-right: 54rem;
+    @media screen and (max-width: 1440px) {
+      margin-right: 52rem;
+    }
+  }
+  .line {
+    // text-decoration: underline;
+    border: none;
+    border-bottom: 2px solid $white-color;
+    padding-bottom: 5px;
+    margin-top: 5px;
+  }
+  &__inner-wrapper {
+    width: 100%;
+    // max-width: 478px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // margin-right: -10px;
+  }
+  .site-logo-mob {
+    display: none;
+    img {
+      display: none;
+    }
+  }
+  .site-logo__mob {
+    display: none;
+  }
+  @include responsive(tablet) {
+    padding: 2.4rem 0 2rem;
+    .site-logo {
+      margin-right: 9.5rem;
+      img {
+        width: 174px;
+        height: 52px;
+      }
+    }
+    .line {
+      // text-decoration: underline;
+      border: none;
+      border-bottom: 2px solid #68b738;
+    }
+  }
+  @include responsive(mobile) {
+    &__inner-wrapper {
+      background-color: #333a44;
+      position: fixed;
+      top: 7.2rem;
+      left: 0;
+      bottom: 0;
+      width: 68%;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 6.4rem 3.2rem 2.4rem;
+      transform: translateX(-100%);
+      transition: 0.5s ease;
+    }
+    .header__inner-wrapper .show-nav {
+      transform: translateX(0%);
+    }
+
+    .site-logo {
+      display: none;
+    }
+    .site-logo-mob {
+      // margin: 0 auto;
+      margin-right: 65px;
+      display: block;
+      img {
+        display: block;
+      }
+    }
+    .site-logo__mob {
+      display: block;
+    }
+  }
+}
+// HEADER END

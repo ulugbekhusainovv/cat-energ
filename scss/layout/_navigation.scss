@@ -1,0 +1,54 @@
+.sitenav {
+  margin-right: auto;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    display: block;
+    text-transform: uppercase;
+    @include fontStyle(2rem, 1.482, normal, $white-color, 400);
+    font-family: $body-font-family;
+    @media screen and (max-width: 570px) {
+      font-size: 1.4rem;
+      line-height: 1.42857;
+    }
+
+    &:active {
+      color: $color-yellow;
+    }
+  }
+
+  @include responsive(tablet) {
+    &__link {
+      @include fontStyle(1.8rem, 1.3333, normal, $title-color, 400);
+    }
+  }
+  @include responsive(mobile) {
+    margin: 0;
+    &__list {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 2.4rem;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 3.2rem;
+    }
+
+    &__link {
+      color: #e5ecf4;
+    }
+  }
+}
